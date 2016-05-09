@@ -7,7 +7,7 @@ class Player
 	# end
 
 	def computer_choice 
-		["rock", "paper", "scissors"].shuffle.first
+		computer = ["rock", "paper", "scissors"].shuffle.first
 	end
  
 end
@@ -26,19 +26,19 @@ class Game
 
 def game_time
 	if @computer == "rock" && @weapon == "scissors" 
-		then puts "Computer wins!"
+		"Computer wins!"
 	elsif @computer == @weapon
-		then puts "It's a tie!"
+		"It's a tie!"
 	elsif @computer == "scissors" && @weapon == "paper"
-		then puts "computer wins!"
+		"Computer wins!"
 	elsif @computer == "paper" && @weapon == "rock"
-		then puts "Computer Wins"
+		"Computer Wins"
 	elsif @computer == "scissors" && @weapon == "rock"
-		then puts "You win!"
+		"You win!"
 	elsif @computer == "paper" && @weapon == "scissors"
-		then puts "You win!"
+		"You win!"
 	elsif @computer == "rock" && @weapon == "paper"
-		then puts "You Win!"
+		"You Win!"
 	end
 end
 
