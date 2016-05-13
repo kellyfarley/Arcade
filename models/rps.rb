@@ -1,5 +1,5 @@
 class Player 
-	attr_accessor :name, :weapon
+	attr_accessor :name, :weapon, :response
 
 	# def weapon_choice 
 	# 	puts "Choose your weapon: rock, paper or scissors" 
@@ -7,14 +7,15 @@ class Player
 	# end
 
 	def computer_choice 
-		computer = ["rock", "paper", "scissors"].shuffle.first
+		@computer = ["rock", "paper", "scissors"].shuffle.first
 	end
  
 end
 
 
 class Game 
-	# def initialize
+	def initialize (p1)
+		@p1 = p1
 	# 	player = Player.new
 	# 	puts "What's your name!?"
 	# 	player.name = gets.chomp
@@ -22,23 +23,23 @@ class Game
 	# 	@computer = player.computer_choice
 	# 	@weapon = player.weapon_choice
 	# 	puts @computer
-	# end
+	end
 
 def game_time
-	if @computer == "rock" && @weapon == "scissors" 
+	if @computer == "rock" && @p1.response == "scissors" 
 		"Computer wins!"
-	elsif @computer == @weapon
+	elsif @computer == @p1.response
 		"It's a tie!"
-	elsif @computer == "scissors" && @weapon == "paper"
+	elsif @computer == "scissors" && @p1.response == "paper"
 		"Computer wins!"
-	elsif @computer == "paper" && @weapon == "rock"
-		"Computer Wins"
-	elsif @computer == "scissors" && @weapon == "rock"
+	elsif @computer == "paper" && @p1.response == "rock"
+		"Computer wins!"
+	elsif @computer == "scissors" && @p1.response == "rock"
 		"You win!"
-	elsif @computer == "paper" && @weapon == "scissors"
+	elsif @computer == "paper" && @p1.response == "scissors"
 		"You win!"
-	elsif @computer == "rock" && @weapon == "paper"
-		"You Win!"
+	elsif @computer == "rock" && @p1.response == "paper"
+		"You win!"
 	end
 end
 
